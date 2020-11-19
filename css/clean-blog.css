@@ -4,10 +4,33 @@
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-clean-blog/blob/master/LICENSE)
  */
 
+/* My CSS */
+header.masthead .page-heading .subheading a,
+header.masthead .site-heading .subheading a{
+  color: #EEEEEE;
+  transition: all 0.2s;
+}
+
+.profile{
+  margin:10px;
+  width: 550px;
+}
+
+.prof-pic{
+  margin: 15px;
+  width: 150px;
+  height: 150px;
+}
+
+.masthead{
+  height: 450px;
+}
+/* ----- */
+
 body {
-  font-size: 20px;
+  font-size: 17px;
   color: #212529;
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: 'Open Sans', 'Times New Roman', serif;
 }
 
 p {
@@ -46,7 +69,7 @@ blockquote {
 .section-heading {
   font-size: 36px;
   font-weight: 700;
-  margin-top: 60px;
+  margin-top: 15px;
 }
 
 .caption {
@@ -191,7 +214,7 @@ header.masthead .overlay {
 header.masthead .page-heading,
 header.masthead .post-heading,
 header.masthead .site-heading {
-  padding: 200px 0 150px;
+  padding: 150px 0 150px;
   color: white;
 }
 
@@ -199,7 +222,7 @@ header.masthead .site-heading {
   header.masthead .page-heading,
   header.masthead .post-heading,
   header.masthead .site-heading {
-    padding: 200px 0;
+    padding: 150px 0;
   }
 }
 
