@@ -31,6 +31,12 @@ header.masthead .site-heading .subheading a{
   padding-bottom: 20px;
   padding-left: 15px;
 }
+
+.sponsor-logo{
+  height: 150px;
+  margin-right: 40px;
+}
+
 /* ----- */
 
 body {
