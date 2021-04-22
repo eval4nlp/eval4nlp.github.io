@@ -40,6 +40,9 @@ header.masthead .site-heading .subheading a{
   display:inline-block;
 }
 
+.underline{
+  text-decoration: underline;
+}
 /* ----- */
 
 body {
