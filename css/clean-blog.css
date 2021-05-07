@@ -43,6 +43,10 @@ header.masthead .site-heading .subheading a{
 .underline{
   text-decoration: underline;
 }
+
+table a {
+  text-decoration: underline;
+}
 /* ----- */
 
 body {
