@@ -47,6 +47,30 @@ header.masthead .site-heading .subheading a{
 table a {
   text-decoration: underline;
 }
+
+.code-block{
+  font-family: Consolas,"courier new";
+  /*color: crimson;*/
+  background-color: #f1f1f1;
+  padding: 2px;
+}
+
+.code-block ul{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.high-red{
+  color: black; 
+  background-color: rgba(255, 0, 0, 0.3); 
+  display:inline-block;
+}
+
+.high-blue{
+  color: black; 
+  background-color: rgba(0, 0, 255, 0.3); 
+  display:inline-block;
+}
 /* ----- */
 
 body {

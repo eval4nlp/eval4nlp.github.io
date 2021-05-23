@@ -70,8 +70,143 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <h2 class="section-heading">TBA</h2>
-        
+        <h2 class="section-heading">Explainable Quality Estimation</h2>
+        <br>
+        <h3>Important Dates (Tentative)</h3>
+        <p>All deadlines are 11.59 pm UTC -12h (“Anywhere on Earth”).
+          <ul>
+            <li>Training and development data release: May 24, 2021</li>
+            <li>Test data release: August 20, 2021</li>
+            <li><b>Submission deadline: September 1, 2021</b></li>
+            <li>System paper submission deadline: September 17, 2021</li>
+            <li>Workshop day: November 10 or 11, 2021</li>
+          </ul>
+        </p>
+
+        <h4>Overview</h4>
+        <p>Recent Natural Language Processing (NLP) systems based on pre-trained representations from Transformer language models, such as BERT and XLM-Roberta, have achieved outstanding results in a variety of tasks. This boost in performance, however, comes at the cost of efficiency and interpretability. Interpretability is a major concern in modern Artificial Intelligence (AI) and NLP research, as black-box models undermine users’ trust in new technologies.</p>
+        <p>In this shared task, we focus on evaluating machine translation (MT) as an example of this problem. Specifically, we look at the task of quality estimation (QE) (a.k.a. reference-free evaluation) where the aim is to predict the quality of MT output at inference time, without access to reference translations. Translation quality can be assessed at different levels of granularity: sentence-level, i.e. predicting the overall quality of translated sentences and word-level, i.e. highlighting specific errors in the MT output. Those have traditionally been treated as two separate tasks, each one requiring dedicated training data.</p>
+        <p>In this shared task, we propose to address translation error identification as an explainability task. Explainability is a broad area aimed at explaining predictions of machine learning models. Rationale extraction methods achieve this by selecting a portion of the input that justifies model output for a given data point. In translation, human perception of quality is guided by the number and severity of translation errors. <b>By framing error identification as rationale extraction for sentence-level quality estimation systems</b>, this shared task offers an opportunity to study whether such systems behave in the same way as humans would do.</p>
+        <p>Explanations can be obtained either by building inherently interpretable models (Yu et al., 2019) or by using  post-hoc explanation methods which extract explanations from an existing model. In the shared task, we will provide both sentence-level training data and strong sentence-level models, and thus encourage the participants to explore both approaches.</p>
+
+        <h5>Goals</h5>
+        <p><ul>
+          <li>We would like to foster progress in the <b>plausibility aspect</b> of explanations, i.e., how similar generated explanations are to human explanations, by proposing a new challenging task and a test set with manually annotated rationales.</li>
+          <li>Word-level MT error annotation is hard and time-consuming. This shared task will encourage research on <b>unsupervised or semi-supervised methods for error identification</b>.</li>
+          <li>This task offers an opportunity to study how current NLP evaluation systems arrive at their predictions and to what extent this process is aligned with human reasoning.</li>
+        </ul></p>
+
+        <h4>Task Description</h4>
+        <p>The task will consist of building a quality estimation system that i) predicts the quality score for an input pair of source text and MT hypothesis, ii) provides word-level evidence for its predictions.</p> 
+
+        <p><b>The repository linked below contains datasets, evaluation scripts, and instructions on how to produce baseline results.</b><br>
+        <a href="https://github.com/eval4nlp/SharedTask2021" target="blank">https://github.com/eval4nlp/SharedTask2021</a>
+        </p>
+
+        <h5>Data</h5>
+        <p>The <b>training and development data</b> for this shared task is the Estonian-English (Et-En) and Romanian-English (Ro-En) partitions of <a href="https://github.com/sheffieldnlp/mlqe-pe" target="blank">the MLQE-PE dataset</a> (Fomicheva et al. 2020). The sentence-level QE systems are to be trained using <a href="https://github.com/sheffieldnlp/mlqe-pe/tree/master/data/direct-assessments" target="blank">sentence-level quality scores</a>. <a href="https://github.com/sheffieldnlp/mlqe-pe/tree/master/data/post-editing" target="blank">Word-level labels derived from post-editing</a> can be used for development purposes. However, we <b>discourage</b> participants from using the word-level data for training, as the goal of the shared task is to explore word-level quality estimation in an unsupervised setting, i.e. as a rationale extraction task.</p>
+
+        <p>As <b>test data</b>, we will collect sentence-level quality scores and word-level error annotations for these two language pairs. We will also provide a zero-shot test set for the German-Chinese (De-Zh) and the German-Russian (De-Ru) language pairs where no sentence-level or word-level annotation would be available at training time. Human annotators will be asked to indicate translation errors as an explanation for the overall sentence scores, as well as the corresponding words in the source sentence.</p>
+
+        <p>Below we provide an example of the test data and the output that is expected from the participants:
+          <div class="code-block">
+            <ul>
+              <li><b>Source</b>: <span class="high-blue">Pronksiajal</span> võeti kasutusele <span class="high-blue">pronksist</span> tööriistad , ent <span class="high-blue">käepidemed</span> valmistati ikka puidust</li> 
+              <li><b>MT</b>: <span class="high-red">Bronking</span> tools were introduced during the <span class="high-red">long</span> <span class="high-red">term</span>, but <span class="high-red">handholds</span> were still made up of wood .</li>
+              <li><b>Gold Explanations Source</b>: <span class="high-blue">1</span> 0 0 <span class="high-blue">1</span> 0 0 0 <span class="high-blue">1</span> 0 0 0</li>
+              <li><b>Gold Explanations MT</b>: <span class="high-red">1</span> 0 0 0 0 0 <span class="high-red">1</span> <span class="high-red">1</span> 0 0 <span class="high-red">1</span> 0 0 0 0 0 0 0</li>
+              <li><b>Model Explanations Source</b>: <b>0.8</b> 0.5 0.6 <b>0.7</b> 0.4 0.2 0.3 <b>0.6</b> 0.1 0.2 0.2</li>
+              <li><b>Model Explanations MT</b>: <b>0.9</b> 0.6 0.6 <b>0.8</b> 0.5 0.5 0.6 <b>0.7</b> 0.2 0.1 <b>0.9</b> 0.2 0.1 0.3 0.5 0.6 0.1 0.5</li>
+              <li><b>Gold Sentence Level Score</b>: 58</li>
+              <li><b>Predicted Sentence Level Score</b>: 44</li>
+            </ul>
+          </div>
+          <br>
+          where
+          <ul>
+            <li>Highlighted tokens in the MT output represent various major errors that distort the meaning of the source sentence and explain the low sentence-level score.</li>
+            <li>Highlighted tokens in the source sentence correspond to translation errors in the target.</li>
+            <li>Gold Explanations Source and Gold Explanations MT are the binary scores that will be used as ground truth for evaluation, where 1 represents tokens that are relevant for the overall quality score, as they indicate why the translation is imperfect.</li>
+            <li>Model Explanations Source and Model Explanations Target are continuous scores that need to be provided by the participants, where the tokens with the highest scores are expected to correspond to the tokens considered relevant by human annotators. Thus, <b>participants are expected to provide a continuous score for each token indicating its importance for model prediction</b>.</li>
+            <li>Gold Sentence Level Score is the ground truth sentence score in the range [0..100] where higher score means better translation. These scores will be available at training time and will be used to assess the overall performance of the sentence-level model at test time.</li>
+            <li>Predicted Sentence Level Score is the predicted sentence score from the QE model that is expected to be provided by the participants.</li>
+          </ul>
+          Note that in the example above, all of the words that justify the low overall score are highlighted. At the same time, the word “up” in the phrase “made up of wood” is not highlighted, as it constitutes a minor mistake and even if this error were not there, the sentence would still receive a low score. Thus, to better correspond to human explanations, the word-level scores from the participants will need to capture the severity of the errors.
+        </p>
+
+        <h5>Evaluation</h5>
+        <p>
+          The aim of evaluation is to assess the quality of explanations, not sentence-level predictions. Therefore, <b>the main metrics for evaluation will be AUC and AUPRC scores for word-level explanations</b>.</p>
+          <ul>
+            <li>Since the explanations are required to correspond to translation errors, these statistics will be computed <b>for the subset of translations that contain errors according to human annotation</b>.</li>
+            <li>We also ask the participants to provide the sentence-level predictions of their models and compute Pearson correlation with human judgments to measure the overall performance of the system.</li>
+          </ul>
+
+          <p>We will have two separate tracks:
+          <ul>
+            <li><em>Target only evaluation</em>. Participants are only expected to provide scores for the target words. Those scores will be evaluated against error labels resulting from manual annotation. Missing word errors will be ignored in this track.</li>
+            <li><em>Source and target evaluation</em>. Participants are expected to provide scores for both source and target tokens. The scores must capture errors in the target sentence as well as the corresponding words in the source sentence. Also, if a source word is missing in the translation, it is expected to receive a high score.</li>
+          </ul>
+        </p>
+
+        <h5>Baseline</h5>
+        <p>In the repository linked above, we provide links to the TransQuest sentence-level QE models (Ranasinghe et al. 2020) that were one of the top-performing submissions at WMT2020 QE Shared Task. The models are based on fine-tuning multilingual pre-trained representations for the sentence-level QE task on the direct assessment (DA) quality scores from the MLQE-PE dataset. Both models and code are freely available. The participants can use these models, and explore post-hoc approaches to rationale extraction. Participants are also free to train their own QE models and explore architectures that would allow word-level interpretation of model predictions. As a baseline, we will use TransQuest as a QE model and LIME (Ribeiro et al. 2016), a model agnostic explanation method for rationale extraction.</p>
+
+        <h4>Submission</h4>
+        <br>
+        <h5>Submission Website</h5>
+        <p>We will use CodaLab as a platform for participants to submit their predictions for the test dataset. The competition and the submission link will be available soon.</p>
+
+        <h5>Submission Format</h5>
+        <p>Participants will submit two or three files</p>
+        <ul>
+          <li>One file with sentence-level scores, one score per line.</li>
+          <li>One file with source token-level scores (optional). Each line must contain a sequence of scores separated by white space. The number of scores must correspond to the number of source tokens.</li>
+          <li>One file with target token-level scores. Each line must contain a sequence of scores separated by white space. The number of scores must correspond to the number of target tokens.</li>
+          <li>Token-level scores must represent the importance of each token towards the sentence-level prediction, where a higher score means the token is more likely to be an error (in the case of target tokens) or related to an error (in the case of source tokens). The scores do not need to be normalized.</li>
+        </ul>
+        <p>The name of the file must have the following format: <code>&lt;TASK&gt;.&lt;TEAM&gt;.&lt;LANGUAGE_PAIR&gt;</code></p>
+        <ul>
+          <li>TASK: sentence, source or target</li>
+          <li>TEAM: name of the team</li>
+          <li>LANGUAGE_PAIR: eten, roen, dezh or deru</li>
+        </ul>
+
+        <br>
+        <h4>Recommended Resources</h4>
+        <br>
+        <h5>Quality Estimation Systems</h5>
+        <ul>
+          <li><a href="https://github.com/TharinduDR/TransQuest" target="blank" class="underline">TransQuest (Ranasinghe et al. 2020)</a> </li>
+          <li><a href="https://github.com/sheffieldnlp/deepQuest" target="blank" class="underline">deepQuest (Kepler et al. 2019)</a> </li>
+          <li><a href="https://github.com/Unbabel/OpenKiwi" target="blank" class="underline">OpenKiwi</a></li>
+        </ul>
+        <h5>Post-Hoc Explainability Tools</h5>
+        <ul>
+          <li><a href="https://github.com/marcotcr/lime" target="blank" class="underline">LIME (Ribeiro et al., 2016)</a> </li>
+          <li><a href="https://github.com/slundberg/shap" target="blank" class="underline">SHAP (Lundberg and Lee, 2017)</a> </li>
+          <li><a href="https://allennlp.org/interpret" target="blank" class="underline">AllenNLP Interpret (Wallace et al., 2019)</a></li>
+          <li><a href="https://github.com/albermax/innvestigate" target="blank" class="underline">iNNvestigate (Alber et al., 2019)</a></li>
+        </ul>
+
+        <br>
+        <h4>References</h4>
+        <br>
+        <ul>
+          <li>Scott M. Lundberg, Su-In Lee (2017). A Unified Approach to Interpreting Model Predictions. NIPS2017</li>
+          <li>Tharindu Ranasinghe, Constantin Orasan, Ruslan Mitkov (2020). TransQuest at WMT2020: Sentence-Level Direct Assessment</li>
+          <li>Tharindu Ranasinghe, Constantin Orasan, Ruslan Mitkov (2020). TransQuest: Translation Quality Estimation with Cross-lingual Transformers</li>
+          <li>Marco Tulio Ribeiro, Sameer Singh, Carlos Guestrin. (2016). "Why Should I Trust You?": Explaining the Predictions of Any Classifier</li>
+          <li>Wei Zhao, Goran Glavaš, Maxime Peyrard, Yang Gao, Robert West, Steffen Eger. (2020). On the Limitations of Cross-lingual Encoders as Exposed by Reference-Free Machine Translation Evaluation</li>
+          <li>Marina Fomicheva, Shuo Sun, Erick Fonseca, Frédéric Blain, Vishrav Chaudhary, Francisco Guzmán, Nina Lopatina, Lucia Specia, André F. T. Martins. (2020) MLQE-PE: A Multilingual Quality Estimation and Post-Editing Dataset</li>
+          <li>Mo Yu, Shiyu Chang, Yang Zhang, Tommi Jaakkola (2019). Rethinking Cooperative Rationalization: Introspective Extraction and Complement Control</li>
+          <li>Mukund Sundararajan, Ankur Taly, Qiqi Yan (2017). Axiomatic Attribution for Deep Networks</li>
+          <li>Eric Wallace, Jens Tuyls, Junlin Wang, Sanjay Subramanian, Matt Gardner, Sameer Singh (2019). AllenNLP Interpret: A Framework for Explaining Predictions of NLP Models</li>
+        </ul>
+        <br>
+        <h4>Contact Information</h4>
+        <b>Email</b>: <a href="mailto:eval4nlp@gmail.com">eval4nlp@gmail.com</a>
+        <br><br>
       </div>
     </div>
   </div>
