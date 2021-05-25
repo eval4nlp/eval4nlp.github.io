@@ -87,7 +87,7 @@
         <p>Recent Natural Language Processing (NLP) systems based on pre-trained representations from Transformer language models, such as BERT and XLM-Roberta, have achieved outstanding results in a variety of tasks. This boost in performance, however, comes at the cost of efficiency and interpretability. Interpretability is a major concern in modern Artificial Intelligence (AI) and NLP research, as black-box models undermine users’ trust in new technologies.</p>
         <p>In this shared task, we focus on evaluating machine translation (MT) as an example of this problem. Specifically, we look at the task of quality estimation (QE) (a.k.a. reference-free evaluation) where the aim is to predict the quality of MT output at inference time, without access to reference translations. Translation quality can be assessed at different levels of granularity: sentence-level, i.e. predicting the overall quality of translated sentences and word-level, i.e. highlighting specific errors in the MT output. Those have traditionally been treated as two separate tasks, each one requiring dedicated training data.</p>
         <p>In this shared task, we propose to address translation error identification as an explainability task. Explainability is a broad area aimed at explaining predictions of machine learning models. Rationale extraction methods achieve this by selecting a portion of the input that justifies model output for a given data point. In translation, human perception of quality is guided by the number and severity of translation errors. <b>By framing error identification as rationale extraction for sentence-level quality estimation systems</b>, this shared task offers an opportunity to study whether such systems behave in the same way as humans would do.</p>
-        <p>Explanations can be obtained either by building inherently interpretable models (Yu et al., 2019) or by using  post-hoc explanation methods which extract explanations from an existing model. In the shared task, we will provide both sentence-level training data and strong sentence-level models, and thus encourage the participants to explore both approaches.</p>
+        <p>Explanations can be obtained either by building inherently interpretable models (Yu et al., 2019) or by using  post-hoc explanation methods which extract explanations from an existing model. In the shared task, we will provide both sentence-level training data and strong sentence-level models, and thus encourage the participants to explore both of the approaches.</p>
 
         <h5>Goals</h5>
         <p><ul>
@@ -170,8 +170,14 @@
           <li>TEAM: name of the team</li>
           <li>LANGUAGE_PAIR: eten, roen, dezh or deru</li>
         </ul>
-
         <br>
+        <h5>System Paper Submission</h5>
+        <p>We encourage each team to submit a paper describing their system to the workshop in order to be included in the workshop proceedings. It could be either a long paper (8 pages) or a short paper (4 pages) following <a href="https://2021.emnlp.org/call-for-papers/style-and-formatting" target="blank">the EMNLP 2021 templates and formatting requirements</a>. The deadline for system paper submissions is September 17, 2021. We will announce the instructions for system paper submission as well as the submission system soon.
+        </p>
+
+        <h4>Awards for Best Submissions</h4>
+        <p>The authors of the best submissions will be awarded with monetary rewards. The monetary rewards are kindly sponsored by Artificial Intelligence Journal and Salesforce Research. More details will be available soon.</p>
+        
         <h4>Recommended Resources</h4>
         <br>
         <h5>Quality Estimation Systems</h5>
@@ -204,8 +210,16 @@
         </ul>
         <br>
         <h4>Contact Information</h4>
-        <b>Email</b>: <a href="mailto:eval4nlp@gmail.com">eval4nlp@gmail.com</a>
-        <br><br>
+        <p><b>Email</b>: <a href="mailto:eval4nlp@gmail.com">eval4nlp@gmail.com</a></p>
+        <h4>Sponsors</h4>
+        <div class="row sponsor-panel text-center">
+          <div class="col-lg-6 mx-auto">
+            <a href="https://aij.ijcai.org/" target="blank"><img src="img/aij_logo.jpg" class="sponsor-logo"></a>
+          </div>
+          <div class="col-lg-6 mx-auto">
+            <a href="https://www.salesforce.com/" target="blank"><img src="img/salesforce_logo.jpg" class="sponsor-logo"></a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
