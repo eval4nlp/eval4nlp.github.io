@@ -86,6 +86,7 @@
         <br>
         <table class="table">
           <tbody>
+            <tr><th scope="row">Jun 30, 2021</th><td><a href="https://competitions.codalab.org/competitions/33038" target="blank">The CodaLab competition</a> of our shared task is now live!</td></tr>
             <tr><th scope="row">Jun 16, 2021</th><td>Please join <a href="https://groups.google.com/g/eval4nlp2021-shared-task" target="blank">our Google Group</a> for posting questions related to the shared task.</td></tr>
             <tr><th scope="row">Jun 10, 2021</th><td><a href="https://github.com/eval4nlp/SharedTask2021/tree/main/annotation-guidelines" target="blank">The annotation guidelines</a> of our shared task are now available.</td></tr>
             <tr><th scope="row">Jun 09, 2021</th><td><a href="https://github.com/eval4nlp/SharedTask2021#baseline" target="blank">The baseline</a> of our shared task is now available.</td></tr>
@@ -162,11 +163,12 @@
             <li>We also ask the participants to provide the sentence-level predictions of their models and compute Pearson correlation with human judgments to measure the overall performance of the system.</li>
           </ul>
 
-          <p>We will have two separate tracks:
+          <p>The participants can submit "only target explanations" or "both source explanations and target explanations". 
           <ul>
-            <li><em>Target only evaluation</em>. Participants are only expected to provide scores for the target words. Those scores will be evaluated against error labels resulting from manual annotation. Missing word errors will be ignored in this track.</li>
-            <li><em>Source and target evaluation</em>. Participants are expected to provide scores for both source and target tokens. The scores must capture errors in the target sentence as well as the corresponding words in the source sentence. Also, if a source word is missing in the translation, it is expected to receive a high score.</li>
+            <li>For <em>target only evaluation</em>, participants are only expected to provide scores for the target words. Those scores will be evaluated against error labels resulting from manual annotation. Missing word errors will be ignored in this track.</li>
+            <li>For <em>source and target evaluation</em>, participants are expected to provide scores for both source and target tokens. The scores must capture errors in the target sentence as well as the corresponding words in the source sentence. Also, if a source word is missing in the translation, it is expected to receive a high score.</li>
           </ul>
+          In both cases, the predicted sentence-level scores are also required.
         </p>
 
         <h5>Baseline</h5>
@@ -175,29 +177,45 @@
         <h4>Submission</h4>
         <br>
         <h5>Submission Website</h5>
-        <p>We will use CodaLab as a platform for participants to submit their predictions for the test dataset. The competition and the submission link will be available soon.</p>
+        <p>We use CodaLab as a platform for participants to submit their predictions for the test dataset. <b>The link to our CodaLab competition is <a href="https://competitions.codalab.org/competitions/33038" target="blank">https://competitions.codalab.org/competitions/33038</a>.</b></p>
 
-        <h5>Submission Format</h5>
-        <p>Participants will submit two or three files</p>
+        The competition consists of two main phases.
         <ul>
-          <li>One file with sentence-level scores, one score per line.</li>
-          <li>One file with source token-level scores (optional). Each line must contain a sequence of scores separated by white space. The number of scores must correspond to the number of source tokens.</li>
-          <li>One file with target token-level scores. Each line must contain a sequence of scores separated by white space. The number of scores must correspond to the number of target tokens.</li>
-          <li>Token-level scores must represent the importance of each token towards the sentence-level prediction, where a higher score means the token is more likely to be an error (in the case of target tokens) or related to an error (in the case of source tokens). The scores do not need to be normalized.</li>
-        </ul>
-        <p>The name of the file must have the following format: <code>&lt;TASK&gt;.&lt;TEAM&gt;.&lt;LANGUAGE_PAIR&gt;</code></p>
-        <ul>
-          <li>TASK: sentence, source or target</li>
-          <li>TEAM: name of the team</li>
-          <li>LANGUAGE_PAIR: eten, roen, dezh or rude</li>
+          <li><strong>DEVELOPMENT PHASE</strong>: Submit your predictions and explanations on <a href="https://github.com/eval4nlp/SharedTask2021/tree/main/data/dev" target="blank">the dev set</a>. <strong>(For each language pair, max submissions per day = 999; max submissions overall = 999)</strong>
+            <ul>
+              <li>Estonian-English (Et-En)</li>
+              <li>Romanian-English (Ro-En)</li>
+            </ul>
+          </li>
+          <li><strong>TEST PHASE</strong>: Submit your predictions and explanations on the test set (which will be released on August 20, 2021). <strong>(For each language pair, max submissions per day = 5; max submissions overall = 30)</strong>
+            <ul>
+              <li>Estonian-English (Et-En)</li>
+              <li>Romanian-English (Ro-En)</li>
+              <li>German-Chinese (De-Zh)</li>
+              <li>Russian-German (Ru-De)</li>
+            </ul>
+          </li>
         </ul>
         <br>
+
+        <h5>Submission Format</h5>
+        <br>
+        For each language pair, a submission is a zip file consisting of two or three files.
+        <ul>
+          <li><code>sentence.submission</code> with sentence-level scores, one score per line.</li>
+          <li><code>target.submission</code> with target token-level scores. Each line must contain a sequence of scores separated by white space. The number of scores must correspond to the number of target tokens.</li>
+          <li>(Optional) <code>source.submission</code> with source token-level scores. Each line must contain a sequence of scores separated by white space. The number of scores must correspond to the number of source tokens.</li>
+        </ul>
+        <p>Token-level scores must represent the importance of each token towards the sentence-level prediction, where a higher score means the token is more likely to be an error (in the case of target tokens) or related to an error (in the case of source tokens). The scores do not need to be normalized.</p>
+        <p>Examples of the submission files for the two development phases can be found <a href="https://github.com/eval4nlp/SharedTask2021/tree/main/baselines/random-dev" target="blank">here</a>.</p>
+
         <h5>System Paper Submission</h5>
         <p>We encourage each team to submit a paper describing their system to the workshop in order to be included in the workshop proceedings. It could be either a long paper (8 pages) or a short paper (4 pages) following <a href="https://2021.emnlp.org/call-for-papers/style-and-formatting" target="blank">the EMNLP 2021 templates and formatting requirements</a>. The deadline for system paper submissions is September 17, 2021. We will announce the instructions for system paper submission as well as the submission system soon.
         </p>
 
         <h4>Awards for Best Submissions</h4>
-        <p>The authors of the best submissions will be awarded with monetary rewards. The monetary rewards are kindly sponsored by Artificial Intelligence Journal and Salesforce Research. More details will be available soon.</p>
+        <p>The authors of the best submissions will be awarded with monetary rewards. These will be judged according to several criteria -- the scores on the leaderboards, the article/paper explaining their method, the resourcefulness and creativity of the method.
+        The monetary rewards are kindly sponsored by Artificial Intelligence Journal and Salesforce Research.</p>
         
         <h4>Recommended Resources</h4>
         <br>
