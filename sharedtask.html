@@ -86,6 +86,7 @@
         <br>
         <table class="table">
           <tbody>
+            <tr><th scope="row">Aug 10, 2021</th><td><a href="https://github.com/eval4nlp/SharedTask2021#submission_format" target="blank">The Submission Format</a> has been updated. We require an additional <code>metadata.txt</code> file to be included in the submission zip file of the test phases.</td></tr>
             <tr><th scope="row">Jun 30, 2021</th><td><a href="https://competitions.codalab.org/competitions/33038" target="blank">The CodaLab competition</a> of our shared task is now live!</td></tr>
             <tr><th scope="row">Jun 16, 2021</th><td>Please join <a href="https://groups.google.com/g/eval4nlp2021-shared-task" target="blank">our Google Group</a> for posting questions related to the shared task.</td></tr>
             <tr><th scope="row">Jun 10, 2021</th><td><a href="https://github.com/eval4nlp/SharedTask2021/tree/main/annotation-guidelines" target="blank">The annotation guidelines</a> of our shared task are now available.</td></tr>
@@ -198,10 +199,18 @@
         </ul>
         <br>
 
-        <h5>Submission Format</h5>
+        <h5 id="submission_format">Submission Format</h5>
         <br>
-        For each language pair, a submission is a zip file consisting of two or three files.
+        For each language pair, a submission is a zip file consisting of three or four files.
         <ul>
+          <li>
+            <code>metadata.txt</code> must have exactly three non-empty lines.
+            <ul>
+              <li>The first line contains your team name. You might use your CodaLab username as your team name.</li>
+              <li>The second line must be either 'constrained' or 'unconstrained', indicating the submission track. 'constrained' means that you did not train your system on word-level labels, whereas 'unconstrained' means that you trained your system on word-level labels.</li>
+              <li>The third line contains a short description (2-3 sentences) of the system you used to generate the results. This description will not be shown to other participants.</li>
+            </ul>
+          </li>
           <li><code>sentence.submission</code> with sentence-level scores, one score per line.</li>
           <li><code>target.submission</code> with target token-level scores. Each line must contain a sequence of scores separated by white space. The number of scores must correspond to the number of target tokens.</li>
           <li>(Optional) <code>source.submission</code> with source token-level scores. Each line must contain a sequence of scores separated by white space. The number of scores must correspond to the number of source tokens.</li>
