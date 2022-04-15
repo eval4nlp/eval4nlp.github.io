@@ -1,86 +1,13 @@
 /*!
  * Start Bootstrap - Clean Blog v5.0.10 (https://startbootstrap.com/theme/clean-blog)
- * Copyright 2013-2020 Start Bootstrap
+ * Copyright 2013-2022 Start Bootstrap
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-clean-blog/blob/master/LICENSE)
  */
 
-/* My CSS */
-header.masthead .page-heading .subheading a,
-header.masthead .site-heading .subheading a{
-  color: #EEEEEE;
-  transition: all 0.2s;
-}
-
-.profile{
-  margin:10px;
-  width: 550px;
-}
-
-.talk{
-  margin:0px;
-}
-
-.prof-pic{
-  margin: 15px;
-  width: 150px;
-  height: 150px;
-}
-
-.masthead{
-  height: 450px;
-}
-
-.sponsor-panel{
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 15px;
-}
-
-.sponsor-logo{
-  height: 150px;
-  margin-top: 20px;
-  margin-right: 40px;
-  margin-bottom: 40px;
-  display:inline-block;
-}
-
-.underline{
-  text-decoration: underline;
-}
-
-table a {
-  text-decoration: underline;
-}
-
-.code-block{
-  font-family: Consolas,"courier new";
-  /*color: crimson;*/
-  background-color: #f1f1f1;
-  padding: 2px;
-}
-
-.code-block ul{
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.high-red{
-  color: black; 
-  background-color: rgba(255, 0, 0, 0.3); 
-  display:inline-block;
-}
-
-.high-blue{
-  color: black; 
-  background-color: rgba(0, 0, 255, 0.3); 
-  display:inline-block;
-}
-/* ----- */
-
 body {
-  font-size: 17px;
+  font-size: 20px;
   color: #212529;
-  font-family: 'Open Sans', 'Times New Roman', serif;
+  font-family: 'Lora', 'Times New Roman', serif;
 }
 
 p {
@@ -119,7 +46,7 @@ blockquote {
 .section-heading {
   font-size: 36px;
   font-weight: 700;
-  margin-top: 15px;
+  margin-top: 60px;
 }
 
 .caption {
@@ -264,7 +191,7 @@ header.masthead .overlay {
 header.masthead .page-heading,
 header.masthead .post-heading,
 header.masthead .site-heading {
-  padding: 150px 0 150px;
+  padding: 200px 0 150px;
   color: white;
 }
 
@@ -272,7 +199,7 @@ header.masthead .site-heading {
   header.masthead .page-heading,
   header.masthead .post-heading,
   header.masthead .site-heading {
-    padding: 150px 0;
+    padding: 200px 0;
   }
 }
 
