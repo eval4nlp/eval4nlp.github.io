@@ -114,16 +114,15 @@
               </tr>
           </table>
           <h2>Session 4</h2>
-          TBA
-<!--          <table class="table" id="session4">-->
-<!--              <tr>-->
-<!--                  <th>Time (UTC)</th>-->
-<!--                  <th>Your Local Time*</th>-->
-<!--                  <th>Workshop</th>-->
-<!--                  <th>Title</th>-->
-<!--                  <th>Authors</th>-->
-<!--              </tr>-->
-<!--          </table>-->
+         <table class="table" id="session4">
+             <tr>
+                 <th>Time (UTC)</th>
+                 <th>Your Local Time*</th>
+                 <th>Workshop</th>
+                 <th>Title</th>
+                 <th>Authors</th>
+             </tr>
+         </table>
       </div>
     </div>
   </div>
@@ -143,7 +142,7 @@
                 "start": new Date("2022-11-20T10:45:00.000Z"),
                 "end": new Date("2022-11-20T11:30:00.000Z"),
                 "title": "Invited Talk",
-                "authors": "TBD"
+                "authors": "Anya Belz"
             },
             {
                 "workshop": "Eval4NLP",
@@ -244,55 +243,55 @@
         var session4 = [
             {
                 "workshop": "SUMEval",
-                "start": new Date("2022-11-20T17:45:00.000Z"),
-                "end": new Date("2022-11-20T18:25:00.000Z"),
+                "start": new Date("2022-11-20T17:30:00.000Z"),
+                "end": new Date("2022-11-20T18:10:00.000Z"),
                 "title": "Invited Talk",
-                "authors": "TBD"
+                "authors": "Masakhane"
             },
             {
                 "workshop": "SUMEval",
-                "start": new Date("2022-11-20T18:25:00.000Z"),
-                "end": new Date("2022-11-20T18:35:00.000Z"),
+                "start": new Date("2022-11-20T18:10:00.000Z"),
+                "end": new Date("2022-11-20T18:20:00.000Z"),
                 "title": "Shared Task Overview",
-                "authors": ""
+                "authors": "Kabir Ahuja"
             },
             {
                 "workshop": "SUMEval",
-                "start": new Date("2022-11-20T18:45:00.000Z"),
-                "end": new Date("2022-11-20T18:55:00.000Z"),
+                "start": new Date("2022-11-20T18:20:00.000Z"),
+                "end": new Date("2022-11-20T18:30:00.000Z"),
                 "title": "To Train or Not to Train: Predicting the Performance of Massively Multilingual Models",
-                "authors": ""
+                "authors": "Omkar Gokhale"
+            },
+            {
+                "workshop": "SUMEval",
+                "start": new Date("2022-11-20T18:30:00.000Z"),
+                "end": new Date("2022-11-20T18:40:00.000Z"),
+                "title": "The GMU System Submission for the SUMEval 2022 Shared Task",
+                "authors": "Syeda Sabrina Akter"
+            },
+            {
+                "workshop": "SUMEval",
+                "start": new Date("2022-11-20T18:40:00.000Z"),
+                "end": new Date("2022-11-20T18:55:00.000Z"),
+                "title": "NTREX-128 -- News Test References for MT Evaluation of 128 Languages",
+                "authors": "Christian Federmann"
             },
             {
                 "workshop": "SUMEval",
                 "start": new Date("2022-11-20T18:55:00.000Z"),
-                "end": new Date("2022-11-20T19:05:00.000Z"),
-                "title": "The GMU System Submission for the SUMEval 2022 Shared Task",
-                "authors": ""
-            },
-            {
-                "workshop": "SUMEval",
-                "start": new Date("2022-11-20T19:05:00.000Z"),
-                "end": new Date("2022-11-20T19:20:00.000Z"),
-                "title": "NTREX-128 -- News Test References for MT Evaluation of 128 Languages",
-                "authors": ""
-            },
-            {
-                "workshop": "SUMEval",
-                "start": new Date("2022-11-20T19:20:00.000Z"),
-                "end": new Date("2022-11-20T19:35:00.000Z"),
+                "end": new Date("2022-11-20T19:10:00.000Z"),
                 "title": "IndoRobusta: Towards Robustness Against Diverse Code-Mixed Indonesian Local Languages",
-                "authors": ""
+                "authors": "Muhammad Farid Adilazuarda"
             },
             {
                 "workshop": "SUMEval",
-                "start": new Date("2022-11-20T19:35:00.000Z"),
-                "end": new Date("2022-11-20T19:50:00.000Z"),
+                "start": new Date("2022-11-20T19:10:00.000Z"),
+                "end": new Date("2022-11-20T19:20:00.000Z"),
                 "title": "Closing Presentation",
                 "authors": ""
             }
         ];
-        var program = [session1, session2, session3];
+        var program = [session1, session2, session3, session4];
 
         program.forEach((session, index) => {
             var table = document.getElementById("session" + (index + 1));
