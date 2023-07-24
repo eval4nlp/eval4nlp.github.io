@@ -179,3 +179,14 @@ table a {
   src: url('../fonts/open-sans-v35-latin-800italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+.left-img{
+  max-width: 20%;
+  max-height:20%;
+  margin-right: 2%;
+  float: left;
+}
+
+.right-text{
+  overflow:auto;
+  display:block;
+}
