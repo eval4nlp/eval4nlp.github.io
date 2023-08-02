@@ -180,10 +180,8 @@ table a {
 }
 
 .left-img{
-  max-width: 20%;
-  max-height:20%;
-  margin-right: 2%;
-  float: left;
+  max-width: 100%;
+  max-height:100%;
 }
 
 .right-text{
