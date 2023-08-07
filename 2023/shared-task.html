@@ -188,17 +188,27 @@
           <li>We will provide a CodaLab dashboard to compare participants' solutions to others</li>
         </ul>
 
-        <p class="alert alert-primary" role="alert">We plan to release a CodaLab submission environment together with
-          baselines and dev set evaluation code successively until August 7.</p>
+        
+        <p>
+          As of August 7, we have released the first baselines in the shared task <a href="https://github.com/eval4nlp/SharedTask2023/tree/main">github repository</a>.
+        This repository also contains "train" and dev data. The CodaLab dashboard will be available soon. 
+        </p>
 
         <p>We will allow the following models from Huggingface:
         <ul>
           <li><a href="https://huggingface.co/TheBloke/guanaco-65B-GPTQ">Guanaco-65B-GPTQ</a>: A four-bit quantized
             version of Guanaco-65B by [11]. We choose this model as its training data is multilingual to some extent.
           </li>
+          <li><a href="https://huggingface.co/TheBloke/WizardLM-13B-V1.1-GPTQ">WizardLM-13B-V1.1-GPTQ</a>: A four-bit quantized
+            version of WizardLM-13B-V1.1 by [13]. We choose this model due to its good performance on leaderboards. We are
+            not using the verions based on LLaMA2 as it might have been trained on recent Wikipedia articles, which we 
+            will build our test sets on.
+          </li>
+          <li><a href="https://huggingface.co/NousResearch/Nous-Hermes-13b">Nous-Hermes-13b</a>: A model by Nous Research. 
+            We choose this model due to its good performance on leaderboards.
+          </li>
         </ul>
-        <p class="alert alert-primary" role="alert">We will provide a list of further and smaller allowed models until
-          August 7.</p>
+        <p class="alert alert-primary" role="alert">We will update few further models throught the next days</p>
         </p>
         <img src="img/sharedtask.png" class="left-img">
         <p>This image shows an example of prompting based metrics. The sentences that should be evaluated are wrapped
@@ -255,14 +265,17 @@
 
       <div class="mb-5">
         <h4>Baselines</h4>
-        <p class="alert alert-primary" role="alert">We plan to release a CodaLab submission environment together with
-          baselines and dev set evaluation code successively until August 7.</p>
+        <p>
+          As of August 7, we have released the first baselines in the shared task <a href="https://github.com/eval4nlp/SharedTask2023/tree/main">github repository</a>.
+        This repository also contains "train" and dev data.
+        </p>
       </div>
 
       <div class="mb-5">
         <h4>Submission</h4>
-        <p class="alert alert-primary" role="alert">We plan to release a CodaLab submission environment together with
-          baselines and dev set evaluation code successively until August 7.</p>
+        <p class="alert alert-primary" role="alert">The CodaLab competition for the dev sets will be available soon. 
+          The data can also be found in our <a href="https://github.com/eval4nlp/SharedTask2023/tree/main">github repository</a>.
+          Submissions will require a single file with one score per line, matching the rows of the tsv files provided in our repository.</p>
         <!-- <p>We use CodaLab as a platform for participants to submit their predictions for the test dataset. <b>The link to our CodaLab competition is <a href="TBD" target="blank">TBD</a>.</b></p> -->
       </div>
 
@@ -344,6 +357,8 @@
         [11] Dettmers et al., QLoRA: Efficient Finetuning of Quantized LLMs. Arxiv: 2305.14314</br>
         [12] Xu et al., INSTRUCTSCORE: Towards Explainable Text Generation Evaluation with Automatic Feedback.
         arxiv-eprint: 2305.14282. 2023.
+        [13] Xu et al., WizardLM: Empowering Large Language Models to Follow Complex Instructions, Arxiv: 2304.12244
+        [14]
       </div>
 
 
