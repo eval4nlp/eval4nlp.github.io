@@ -108,6 +108,16 @@
       </div>
 
       <div class="mb-5">
+        <h3>Updates</h3>
+        <ul>
+          <li>August 15, 2023: Adding additional examples, resources and information regarding teams on this page.</li>
+          <li>August 11, 2023: Adding information about submission tracks (further may follow)</li>
+          <li>August 08, 2023: Release of the CodaLab Dev Competition (the test will be published there later)</li>
+          <li>August 07, 2023: Release of Github Page with Baselines and extended model list</li>
+        </ul>
+      </div>
+
+      <div class="mb-5">
         <h4>Overview</h4>
         <p>With groundbreaking innovations in unsupervised learning and scalable architectures the opportunities (but
           also
@@ -221,6 +231,12 @@
       </div>
 
       <div class="mb-5">
+        <h4>Teams</h4>
+        <p>Participants of the shared task might either work on it alone or in a team. When participants are working in a team, they should only use <b>one account</b> for submissions on the test task. 
+        On the dev task, participants can submit with as many people and as often they like.</p>
+      </div>
+
+      <div class="mb-5">
         <h4>Tracks</h4>
         <p>We will offer two tracks based on the model sizes. One for models bigger than 25B parameters, one for smaller models.</p>
       </div>
@@ -280,11 +296,25 @@
       </div>
 
       <div class="mb-5">
+        <h4>Examples</h4>
+        <p>
+          The following image shows exemplary prompting setups that might or might not prove useful in the shared task. Some of them will likely produce explanations of some sort
+          while others will only return a score. A number of prompts have already been tested in recent works. E.g. [7] use a zero-shot setting, [6] use a translation probability setting
+          and [12] aggregate sentence-level scores from a fine-grained error taxonomy (though they fine-tune their model).
+        </p>
+        <img src="img/examples.png" class="left-img">
+      </div>
+
+      <div class="mb-5">
         <h4>Submission</h4>
         <p class="alert alert-primary" role="alert">The CodaLab dashboard for the dev sets is available <a href="https://codalab.lisn.upsaclay.fr/competitions/15072">here</a>
           The data can be found in our <a href="https://github.com/eval4nlp/SharedTask2023/tree/main">github repository</a>.
           Submissions will require a single file with one score per line, matching the rows of the tsv files provided in our repository.
-          For more details see the submission page.</p>
+          For more details see the submission page.
+
+          Final submissions will require further details, such as more detailed system descriptions, prompts and (if any) explanations. 
+          The explanations are planned to be evaluated by humans.
+        </p>
         <!-- <p>We use CodaLab as a platform for participants to submit their predictions for the test dataset. <b>The link to our CodaLab competition is <a href="TBD" target="blank">TBD</a>.</b></p> -->
       </div>
 
@@ -329,6 +359,11 @@
           <li><a href="https://github.com/dqxiu/ICL_PaperList">ICL_PaperList</a></li>
           <li><a href="https://github.com/EgoAlpha/prompt-in-context-learning">prompt-in-context-learning</a></li>
         </ul>
+          Amongst the many possible ways that can be used to structure and retrieve LLM output, the following tools might be considered:
+        <ul>
+          <li><a href="https://github.com/guidance-ai/guidance">Guidance</a></li>
+          <li><a href="https://github.com/normal-computing/outlines">Outlines</a></li>
+        </ul>
         </p>
 
         An exemplary selection of recent, related, prompt-based metrics:
@@ -367,7 +402,6 @@
         [12] Xu et al., INSTRUCTSCORE: Towards Explainable Text Generation Evaluation with Automatic Feedback.
         arxiv-eprint: 2305.14282. 2023.
         [13] Xu et al., WizardLM: Empowering Large Language Models to Follow Complex Instructions, Arxiv: 2304.12244
-        [14]
       </div>
 
 
