@@ -110,6 +110,7 @@
       <div class="mb-5">
         <h3>Updates</h3>
         <ul>
+          <li>August 28, 2023: Expansion of model selection. Short update on tracks.</li>
           <li>August 24, 2023: The selection of further models is a bit delayed but will soon conclude.</li>
           <li>August 15, 2023: Adding additional examples, resources and information regarding teams on this page.</li>
           <li>August 11, 2023: Adding information about submission tracks (further may follow).</li>
@@ -215,6 +216,9 @@
           <li><a href="https://huggingface.co/TheBloke/guanaco-65B-GPTQ"><b>Guanaco-65B-GPTQ</b></a>: A four-bit quantized
             version of Guanaco-65B by [11]. We choose this model as its training data is multilingual to some extent.
           </li>
+          <li><a href="https://huggingface.co/TheBloke/Platypus2-70B-Instruct-GPTQ"><b>Platypus2-70B-Instruct-GPTQ</b></a>: A model by [17]. It shows strong performance on leaderboards. 
+            It is based on LLaMA2. We add it as a second big model besides Guanaco. We use a quantized version to make it runnable on more systems. 
+          </li>
           <li><a href="https://huggingface.co/TheBloke/WizardLM-13B-V1.1-GPTQ"><b>WizardLM-13B-V1.1-GPTQ</b></a>: A four-bit quantized
             version of WizardLM-13B-V1.1 by [13]. We choose this model due to its good performance on leaderboards. We are
             not using the verions based on LLaMA2 as it might have been trained on recent Wikipedia articles, which we 
@@ -223,9 +227,16 @@
           <li><a href="https://huggingface.co/NousResearch/Nous-Hermes-13b"><b>Nous-Hermes-13b</b></a>: A model by Nous Research. 
             We choose this model due to its good performance on leaderboards.
           </li>
+          <li><a href="https://huggingface.co/Open-Orca/OpenOrca-Platypus2-13B"><b>OpenOrca-Platypus2-13B</b></a>: A model by [18, 20]. 
+            It shows strong performance on leaderboards for a 13B model and is based on LLaMA2. 
+          </li>
+          <li><a href="https://huggingface.co/psmathur/orca_mini_v3_7b"><b>orca_mini_v3_7b</b></a>: This model by [29, 20] is smaller than 
+            the others on this list and also performs well on LLM leaderboards. We include it to accommodate for less hardware availability. 
+          </li>
         </ul>
-        <p class="alert alert-primary" role="alert">The selection of further models is a bit delayed but will soon conclude.</p>
+        <p class="alert alert-primary" role="alert">Please run the quantized model with their default act.order files.</p>
         </p>
+        <p>Scores of baselines with these models can be found on our CodaLab page. Basline scripts are available on our GitHub.</p>
         <img src="img/sharedtask.png" class="left-img">
         <p>This image shows an example of prompting based metrics. The sentences that should be evaluated are wrapped
           into a prompt that is passed to a language model as an input. Then the model generates an output that
@@ -241,7 +252,8 @@
 
       <div class="mb-5">
         <h4>Tracks</h4>
-        <p>We will offer two tracks based on the model sizes. One for models bigger than 25B parameters, one for smaller models.</p>
+        <p>We will offer two tracks based on the model sizes. One for models bigger than 25B parameters, one for smaller models. In the test phase, we will have separate submission pages
+        for models of each size.</p>
       </div>
 
       <div class="mb-5">
@@ -408,6 +420,10 @@
         [14] Leiter et al., Towards Explainable Evaluation Metrics for Natural Language Generation, Arxiv: 2203.11131</br>
         [15] Leiter et al., Towards Explainable Evaluation Metrics for Machine Translation, Arxiv: 2306.13041</br>
         [16] Fomicheva et al., The Eval4NLP Shared Task on Explainable Quality Estimation: Overview and Results, In: Eval4NLP21</br>
+        [17] Lee et al., Platypus: Quick, Cheap, and Powerful Refinement of LLMs, Arxiv:2308.07317</br>
+        [18] Lee et al., OpenOrcaPlatypus: Llama2-13B Model Instruct-tuned on Filtered OpenOrcaV1 GPT-4 Dataset and Merged with divergent STEM and Logic Dataset Model, Huggingface</br>
+        [19] Mathur, orca_mini_v3_7b: An explain tuned Llama2-7b model, Huggingface</br>
+        [20] Mukherjee et al., Orca: Progressive Learning from Complex Explanation Traces of GPT-4, Arxiv: 2306.02707</br>
       </div>
 
 
