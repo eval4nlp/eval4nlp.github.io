@@ -66,7 +66,8 @@
           <span class="subheading"><b>1<sup>st</sup> November 2023</b>, co-located at <a href="www.ijcnlp-aacl2023.org/"
               target="blank">IJCNLP-AACL 2023</a></span>
           <a class="btn btn-info" href="https://github.com/eval4nlp/SharedTask2023" role="button" target="blank" style="margin: 5px; width:150px;">GitHub</a>
-          <a class="btn btn-info" href="https://codalab.lisn.upsaclay.fr/competitions/15072" role="button" target="blank" style="margin: 5px; width:150px;">CodaLab</a>
+          <a class="btn btn-info" href="https://codalab.lisn.upsaclay.fr/competitions/15072" role="button" target="blank" style="margin: 5px; width:150px;">CodaLab (Dev Phase)</a>
+          <a class="btn btn-info" href="https://www.codabench.org/competitions/1359/#/pages-tab" role="button" target="blank" style="margin: 5px; width:150px;">Codabench (Test Phase)</a>
           <a class="btn btn-info" href="https://groups.google.com/g/eval4nlp2023-shared-task" role="button" target="blank" style="margin: 5px; width:150px;">Google Group</a>
         </div>
       </div>
@@ -89,6 +90,9 @@
             </tbody>
           </table> -->
 
+      <p class="alert alert-primary" role="alert">Due to unforseen circumstances the test phase will be conducted on <a href="https://www.codabench.org/competitions/1359/#/pages-tab">Codabench</a>. 
+      For more information, please check our Google group and the submission instructions on the Codabench page.</p>
+
 
       <div class="mb-5">
         <h3>Important Dates</h3>
@@ -110,6 +114,8 @@
       <div class="mb-5">
         <h3>Updates</h3>
         <ul>
+          <li>September 25/26, 2023: The test phase has now started. Please few our announcements in the google group. Further details about the test phase can also be found on this page.
+          Specifically, we also give brief example of the test sets.</li>
           <li>September 13, 2023: We have updated the schedule of the test phase and provided further new information in the google group.</li>
           <li>August 28, 2023: Expansion of model selection. Short update on tracks.</li>
           <li>August 24, 2023: The selection of further models is a bit delayed but will soon conclude.</li>
@@ -237,7 +243,7 @@
         </ul>
         <p class="alert alert-primary" role="alert">Please run the quantized model with their default act.order files.</p>
         </p>
-        <p>Scores of baselines with these models can be found on our CodaLab page. Basline scripts are available on our GitHub.</p>
+        <p>Scores of baselines with these models on the Dev set can be found on our CodaLab page. Basline scripts are available on our GitHub.</p>
         <img src="img/sharedtask.png" class="left-img">
         <p>This image shows an example of prompting based metrics. The sentences that should be evaluated are wrapped
           into a prompt that is passed to a language model as an input. Then the model generates an output that
@@ -255,6 +261,8 @@
         <h4>Tracks</h4>
         <p>We will offer two tracks based on the model sizes. One for models bigger than 25B parameters, one for smaller models. In the test phase, we will have separate submission pages
         for models of each size.</p>
+        <p>Another track looks at the explainability of the LLMs. This track can be tackled together with the others. Participants can provide newline separated files that can contain any types of 
+        explanations their models create as a byproduct of the grading process. We will evaluate the submissions in a human evaluation.</p>
       </div>
 
       <div class="mb-5">
@@ -269,24 +277,30 @@
           translation as input and summarization metrics will take a document and its summary as an input.</p>
       </div>
 
-      <p>As <b>test data</b>, we collect a new dataset with sentence-level quality scores for MT and summarization.
+      <p>As <b>test data</b>, we collected a new reference-free dataset with sentence/summary-level quality scores for MT and summarization.
         As source data, we leverage sentences and paragraphs collected from English Wikipedia pages created after
-        01.01.2023. For MT, we follow the MQM annotation guidelines by [10]. We intend to provide the language
-        pairs
-        English-German, English-Chinese and English-Korean but might include others or “surprise” pairs. For
-        summarization, we plan to apply an approach that
-        uses MQM annotations to analyze the readability of the source text. Further, this approach annotates the
-        factuality
-        (presence of facts) by mapping facts between source and reference text. ditionally, we assess relevance by
+        15.07.2023 (i.e. the LlAMA2 training cutoff). For MT, we follow the MQM annotation guidelines by [10] and those provided with the Google annotation tool Anthea. We provide the language
+        pairs English-German, English-Chinese and English-Spanish.</p>
+
+      <p>Consider the following example: German source: "Ich habe einen Hund"; English translation: "I have a cat". The word cat should be translated as dog. In MQM annotation, this would
+      be marked as a single major error. Scores are assigned based on error severity and count.</p>
+
+      <p>
+      For summarization, we apply an approach that uses MQM annotations to analyze the readability of the source text. Further, this approach annotates the
+        factuality (presence of facts) by mapping facts between source and reference text. Aditionally, we assess relevance by
         annotating each sentence in the source text with a relevance score. As for MT, we will construct paragraph level
-        scores from this fine-grained annotation. To summarize, sentence-level scores will be constructed from fine
+        scores from this fine-grained annotation. </p>
+
+      <p>Consider the following example: Source: "I have a dog. It is small. I love it."; Summary: "I lve my big dog". In our annotation scheme, we would first assign relvance scores to 
+      each input sentence, i.e., should the fact represented in the sentence be part of the summary. Here, we could say that the first sentence is very relevant and the other two are of
+      medium relevance. Second, we annotate the facts that occur in the summary and all hallucinated content. Third, we apply MQM annotation to flag grammatical and other errors in the summary. 
+      Finally, we use these properties in a heuristic to penalize summaries with a lot of errors and hallucinations and reward summarizes that include many relevant facts. The length of generated
+      summaries was restricted for employed summarization models. In the case of the upper example the summary would contain one relevant and one medium fact, one hallucination and one spelling mistake.</p>
+
+      <p>
+        To summarize, our test-phase scores are constructed from fine
         grained scores, so metrics that are built in a similar way (return and aggregate fine-grained scores) might
         achieve better performance.
-
-      <p class="alert alert-primary" role="alert">Examples of each annotation scheme will be released before the test
-        phase takes place.</p>
-
-      We reserve the right to change the evaluation languages and annotation scheme at later points.
       </p>
 
 
@@ -299,8 +313,7 @@
           It will be possible to only participate for MT or summarization.</p>
 
         <p>We also plan to perform a human evaluation of the explainability of each system submission as a separate
-          track.
-          More information on this will be available soon. </p>
+          track. To do so, participants can provide separate files with any kind of explanations their model produces as byproduct. These explanations should be separated by newlines.</p>
       </div>
 
       <div class="mb-5">
@@ -323,12 +336,11 @@
 
       <div class="mb-5">
         <h4>Submission</h4>
-        <p class="alert alert-primary" role="alert">The CodaLab dashboard for the dev sets is available <a href="https://codalab.lisn.upsaclay.fr/competitions/15072">here</a>
+        <p class="alert alert-primary" role="alert">The Codabench dashboard for the test phase is available <a href="https://www.codabench.org/competitions/1359/#/pages-tab">here</a>
           The data can be found in our <a href="https://github.com/eval4nlp/SharedTask2023/tree/main">github repository</a>.
-          Submissions will require a single file with one score per line, matching the rows of the tsv files provided in our repository.
-          For more details see the submission page.
-
-          Final submissions will require further details, such as more detailed system descriptions, prompts and (if any) explanations. 
+          Submissions will require a file with one score per line, matching the rows of the tsv files provided in our repository.
+          Final submissions will require further details, such as more detailed system descriptions, prompts and (if any) explanations.
+          Details on the test set submissions can be found on the Codabench submission site.
           The explanations are planned to be evaluated by humans.
         </p>
         <!-- <p>We use CodaLab as a platform for participants to submit their predictions for the test dataset. <b>The link to our CodaLab competition is <a href="TBD" target="blank">TBD</a>.</b></p> -->
