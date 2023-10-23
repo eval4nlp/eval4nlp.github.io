@@ -69,6 +69,17 @@ table a {
   background-color: rgba(0, 0, 255, 0.3);
   display:inline-block;
 }
+
+.schedule-header {
+  text-decoration: underline;
+  font-weight: bold;
+  
+}
+
+.schedule-break {
+  color: #585858;
+}
+
 /* ----- */
 
 /* lora-regular - latin */
@@ -188,3 +199,4 @@ table a {
   overflow:auto;
   display:block;
 }
+

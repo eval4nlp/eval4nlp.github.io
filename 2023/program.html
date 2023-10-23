@@ -72,69 +72,43 @@
       <div class="col-lg-8 col-md-10 mx-auto">
           <h1>Program Schedule</h1>
           <p>
-          TBD
-          </p>
-          <!-- <p>
-              *The UTC times are the official times.
-              The times under "Your Local Time" are automatically generated, so please double check them to ensure they are correct!
+            The workshop will take place virtually. Times on this page are in <strong>Central Indonesian</strong> time zone (UTC+8).
           </p>
 
-          <h2>Session 1</h2>
-          <p>Session Chair: TBD</p>
-          <table class="table" id="session1">
-              <tr>
-                  <th>Time (UTC)</th>
-                  <th>Your Local Time*</th>
-                  <th>Workshop</th>
-                  <th>Title</th>
-                  <th>Authors</th>
-              </tr>
-          </table>
-        </div> -->
+          <ul>
+            <li class="mb-3">9:00:   <span class="schedule-header">Welcome and invited talk</span></li>
+            <li>9:45:   <span class="schedule-header">Session 1</span> (3 papers):</li>
+            <ul class="mb-3">
+              <li>EduQuick: A Dataset Toward Evaluating Summarization of Informal Educational Content for Social Media</li>
+              <li>Assessing Distractors in Multiple-Choice Tests</li>
+              <li>Can a Prediction's Rank Offer a More Accurate Quantification of Bias? A Case Study Measuring Sexism in Debiased Language Models</li>
+            </ul>
+            <li class="mb-3">10:30: <span class="schedule-break">5 minutes break</span></li>
+            <li>10:35: <span class="schedule-header">Session 2</span> (3 papers):</li>
+            <ul class="mb-3">
+              <li>Large Language Models As Annotators: A Preliminary Evaluation For Annotating Low-Resource Language Content</li>
+              <li>Summary Cycles: Exploring the Impact of Prompt Engineering on Large Language Models’ Interaction with Interaction Log Information</li>
+              <li>Transformers Go for the LOLs: Generating (Humourous) Titles from Scientific Abstracts End-to-End</li>
+            </ul>
+            <li class="mb-3">11:20: <span class="schedule-break">5 minutes break</span></li>
+            <li>11:25: <span class="schedule-header">Session 3</span> (3 papers):</li>
+            <ul class="mb-3">
+              <li>Zero-shot Probing of Pretrained Language Models for Geography Knowledge</li>
+              <li>WRF: Weighted Rouge-F1 Metric for Entity Recognition</li>
+              <li>Delving into Evaluation Metrics for Generation: A Thorough Assessment of How Metrics Generalize to Rephrasing Across Languages</li>
+            </ul>
+            <li class="mb-3">12:15: <span class="schedule-break">5 minutes break</span></li>
+            <li>12:20: <span class="schedule-header">Session 4</span> (shared task)</li>
+            <ul class="mb-3">
+              <li>12:20-12:25: Shard Task Introduction</li>
+              <li>12:30-12:50: Paper presentations</li>
+              <li>12:50-13:00: Results and announcements of winners</li>
+            </ul>
+            <li>13:00: <span class="schedule-header">Wrap up and closing</span></li>
+          </ul>
+
     </div>
   </div>
-
-<script>
-    function buildProgram() {
-        var session1 = [
-            {
-                "workshop": "Eval4NLP",
-                "start": new Date("2023-11-20T10:30:00.000Z"),
-                "end": new Date("2023-11-20T10:45:00.000Z"),
-                "title": "Topic",
-                "authors": "Authors"
-            }
-        ];
-        var program = [session1, session2, session3, session4];
-
-        program.forEach((session, index) => {
-            var table = document.getElementById("session" + (index + 1));
-
-            session.forEach(presentation => {
-                var start = presentation["start"];
-                var startStringUTC = start.getUTCHours() + ":" + (start.getUTCMinutes() + "").padStart(2, '0');
-                var startStringLocal = start.getHours() + ":" + (start.getMinutes() + "").padStart(2, '0');
-
-                var end = presentation["end"];
-                var endStringUTC = end.getUTCHours() + ":" + (end.getUTCMinutes() + "").padStart(2, '0');
-                var endStringLocal = end.getHours() + ":" + (end.getMinutes() + "").padStart(2, '0');
-
-
-                var row = document.createElement("tr");
-                row.innerHTML = `
-                    <td>${startStringUTC}-${endStringUTC}</td>
-                    <td>${startStringLocal}-${endStringLocal}</td>
-                    <td>${presentation["workshop"]}</td>
-                    <td>${presentation["title"]}</td>
-                    <td>${presentation["authors"]}</td>
-                `;
-                table.appendChild(row);
-            });
-        });
-    }
-
-    buildProgram();
-</script>
 
   <hr>
 
