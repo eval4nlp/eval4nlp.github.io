@@ -76,27 +76,81 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
-      <h1>Program Schedule</h1>
-      <p>
-        TBD
-      </p>
-      <!-- <p>
-              *The UTC times are the official times.
-              The times under "Your Local Time" are automatically generated, so please double check them to ensure they are correct!
-          </p>
+  <h1>Program Schedule</h1>
+  <p>
+    *The UTC times are the official times.
+    The times under "Your Local Time" are automatically generated, so please double check them to ensure they are correct!
+  </p>
 
-          <h2>Session 1</h2>
-          <p>Session Chair: TBD</p>
-          <table class="table" id="session1">
-              <tr>
-                  <th>Time (UTC)</th>
-                  <th>Your Local Time*</th>
-                  <th>Workshop</th>
-                  <th>Title</th>
-                  <th>Authors</th>
-              </tr>
-          </table>
-        </div> -->
+  <h2>Session 1</h2>
+  <p>Session Chair: TBD</p>
+  <table class="table" id="session1">
+    <thead>
+      <tr>
+        <th>Time (UTC)</th>
+        <th>Your Local Time*</th>
+        <th>Workshop</th>
+        <th>Title</th>
+        <th>Authors</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-start="2025-12-23T09:10:00Z" data-end="2025-12-23T10:00:00Z">09:10 – 10:00</td>
+        <td class="local-time"></td>
+        <td>Main Room</td>
+        <td>Session 1 (overview)</td>
+        <td>TBD</td>
+      </tr>
+
+      <tr>
+        <td data-start="2025-12-23T09:10:00Z" data-end="2025-12-23T09:25:00Z">09:10 – 09:25</td>
+        <td class="local-time"></td>
+        <td>Main Room</td>
+        <td>Paper 11</td>
+        <td>TBD</td>
+      </tr>
+
+      <tr>
+        <td data-start="2025-12-23T09:26:00Z" data-end="2025-12-23T09:41:00Z">09:26 – 09:41</td>
+        <td class="local-time"></td>
+        <td>Main Room</td>
+        <td>Paper 10</td>
+        <td>TBD</td>
+      </tr>
+
+      <tr>
+        <td data-start="2025-12-23T09:42:00Z" data-end="2025-12-23T09:57:00Z">09:42 – 09:57</td>
+        <td class="local-time"></td>
+        <td>Main Room</td>
+        <td>Paper 6</td>
+        <td>TBD</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  function formatLocalTime(date) {
+    // Format time as HH:MM in user's locale
+    return date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+  }
+
+  // For each row, read UTC times from data attributes, convert to local, fill local time cell
+  document.querySelectorAll('#session1 tbody tr').forEach(row => {
+    const utcStart = row.querySelector('td[data-start]').getAttribute('data-start');
+    const utcEnd = row.querySelector('td[data-end]').getAttribute('data-end');
+
+    const startDate = new Date(utcStart);
+    const endDate = new Date(utcEnd);
+
+    const localTimeCell = row.querySelector('td.local-time');
+    if (localTimeCell) {
+      localTimeCell.textContent = `${formatLocalTime(startDate)} – ${formatLocalTime(endDate)}`;
+    }
+  });
+</script>
+
     </div>
   </div>
 
