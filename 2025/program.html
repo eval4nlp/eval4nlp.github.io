@@ -77,80 +77,58 @@
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
   <h1>Program Schedule</h1>
+  <p><strong>All times shown are in Mumbai (IST) time.</strong></p>
+
+  <h3>09:00–09:10 — Opening Remarks</h3>
+
+  <h3>09:10–10:00 — Session 1 (3 Papers)</h3>
+  <ul>
+    <li><em>Fair Play in the Newsroom: Actor-Based Filtering of Gender Discrimination in Text Corpora</em></li>
+    <li><em>Reliable Inline Code Documentation with LLMs: Fine-Grained Evaluation of Comment Quality and Coverage</em></li>
+    <li><em>Measuring Visual Understanding in the Telecom Domain: Performance Metrics for Image-to-UML Conversion Using VLMs</em></li>
+  </ul>
+
+  <h3>10:00–10:45 — Invited Talk</h3>
   <p>
-    *The UTC times are the official times.
-    The times under "Your Local Time" are automatically generated, so please double check them to ensure they are correct!
+    Speaker: Prof. Dr. Iryna Gurevych
   </p>
 
-  <h2>Session 1</h2>
-  <p>Session Chair: TBD</p>
-  <table class="table" id="session1">
-    <thead>
-      <tr>
-        <th>Time (UTC)</th>
-        <th>Your Local Time*</th>
-        <th>Workshop</th>
-        <th>Title</th>
-        <th>Authors</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td data-start="2025-12-23T09:10:00Z" data-end="2025-12-23T10:00:00Z">09:10 – 10:00</td>
-        <td class="local-time"></td>
-        <td>Main Room</td>
-        <td>Session 1 (overview)</td>
-        <td>TBD</td>
-      </tr>
+  <h3>10:45–11:30 — Session 2 (3 Papers)</h3>
+  <ul>
+    <li><em>Evaluation of Generated Poetry</em></li>
+    <li><em>Simulating Training Data Leakage in Multiple-Choice Benchmarks for LLM Evaluation</em></li>
+    <li><em>Test Set Quality in Multilingual LLM Evaluation</em></li>
+  </ul>
 
-      <tr>
-        <td data-start="2025-12-23T09:10:00Z" data-end="2025-12-23T09:25:00Z">09:10 – 09:25</td>
-        <td class="local-time"></td>
-        <td>Main Room</td>
-        <td>Paper 11</td>
-        <td>TBD</td>
-      </tr>
+  <h3>11:30 — Break (5 minutes)</h3>
 
-      <tr>
-        <td data-start="2025-12-23T09:26:00Z" data-end="2025-12-23T09:41:00Z">09:26 – 09:41</td>
-        <td class="local-time"></td>
-        <td>Main Room</td>
-        <td>Paper 10</td>
-        <td>TBD</td>
-      </tr>
+  <h3>11:35–12:30 — Session 3 (4 Papers)</h3>
+  <ul>
+    <li><em>Between the Drafts: An Evaluation Framework for Identifying Quality Improvement and Stylistic Differences in Scientific Texts</em></li>
+    <li><em>SynClaimEval: A Framework for Evaluating the Utility of Synthetic Data in Long-Context Claim Verification</em></li>
+    <li><em>“The dentist is an involved parent, the bartender is not”: Revealing Implicit Biases in QA with Implicit BBQ</em></li>
+    <li><em>Beyond Tokens and Into Minds: Future Directions for Human-Centered Evaluation in Machine Translation Post-Editing</em></li>
+  </ul>
 
-      <tr>
-        <td data-start="2025-12-23T09:42:00Z" data-end="2025-12-23T09:57:00Z">09:42 – 09:57</td>
-        <td class="local-time"></td>
-        <td>Main Room</td>
-        <td>Paper 6</td>
-        <td>TBD</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <h3>12:30–14:00 — Lunch Break</h3>
 
-<script>
-  function formatLocalTime(date) {
-    // Format time as HH:MM in user's locale
-    return date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-  }
+  <h3>14:00–15:00 — Session 4 (4 Papers)</h3>
+  <ul>
+    <li><em>InFiNITE (∞): Indian Financial Narrative Inference Tasks & Evaluations</em></li>
+    <li><em>Non-Determinism of “Deterministic” LLM System Settings in Hosted Environments</em></li>
+    <li><em>Beyond the Rubric: Cultural Misalignment in LLM Benchmarks for Sexual and Reproductive Health</em></li>
+    <li><em>TitleTrap: Probing Presentation Bias in LLM-Based Scientific Reviewing</em></li>
+  </ul>
 
-  // For each row, read UTC times from data attributes, convert to local, fill local time cell
-  document.querySelectorAll('#session1 tbody tr').forEach(row => {
-    const utcStart = row.querySelector('td[data-start]').getAttribute('data-start');
-    const utcEnd = row.querySelector('td[data-end]').getAttribute('data-end');
+  <h3>15:00–15:15 — Findings Paper Presentation</h3>
+  <p>
+    <strong>Title:</strong> Agent-based Automated Claim Matching with Instruction-following LLMs<br>
+    <strong>Author(s):</strong> Dina Pisarevskaya, Arkaitz Zubiaga
+  </p>
 
-    const startDate = new Date(utcStart);
-    const endDate = new Date(utcEnd);
+  <h3>15:15–15:30 — Closing Session</h3>
 
-    const localTimeCell = row.querySelector('td.local-time');
-    if (localTimeCell) {
-      localTimeCell.textContent = `${formatLocalTime(startDate)} – ${formatLocalTime(endDate)}`;
-    }
-  });
-</script>
-
+  <h3>16:00–17:00 — Virtual Poster Session</h3>
     </div>
   </div>
 
